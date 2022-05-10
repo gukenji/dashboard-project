@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+li {
+    list-style: none;
+}
+
+.container {
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: minmax(230px, 2fr) 10fr;
+    grid-template-rows: 1fr 4fr;
+    grid-template-areas:
+        "sidebar nav"
+        "sidebar main-content";
+}
+
+/* SIDEBAR */
+
+.sidebar {
+    background-color: #643DF2;
+    width: 100%;
+    grid-area: sidebar;
+    display: grid;
+    padding-left: 10%;
+    grid-template-rows: 1fr 7fr;
+}
+
+.logo h2 {
+    display: flex;
+    gap: 10px;
+    font-size: 22px;
+    align-items: center;
+    color: rgba(250, 250, 250, 0.9);
+    padding-top: 1rem;
+}
+
+.logo h2:hover {
+    cursor: pointer;
+    color: white;
+    text-shadow: 1px 1px .5px #C7BBF2;
+}
+
+.logo h2 span {
+    font-size: 42px;
+}
+
+.sidebar__options {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.sidebar__options ul {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    color: #C7BBF2;
+    font-weight: bold;
+}
+
+.sidebar__options ul li {
+    display: flex;
+    align-items: center;
+}
+
+.sidebar__options ul li:hover {
+    color: white;
+    cursor: pointer;
+    text-shadow: 1px 1px .5px #C7BBF2;
+}
+
+.sidebar__options ul li span {
+    padding-right: 10px;
+}
+
+
+/* NAV */
+
+.nav {
+    background-color: white;
+    grid-area: nav;
+    padding: 20px 4%;
+    box-shadow: 0 0 .5em black;
+    position: relative;
+}
+
+.nav__top {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav__top form {
+    flex-grow: 1;
+}
+
+.nav__top form input[type="search"] {
+    text-align: end;
+    border-radius: 10px;
+    padding-right: 10px;
+    width: 60%;
+    height: 25px;
+    background-color: #e4f2e78e;
+
+}
+
+.nav__top img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+
+}
+
+#profile-name {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.nav__bottom {
+    display: flex;
+    padding-top: 30px;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav__bottom img {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+}
+
+.nav__bottom p {
+    font-size: 15px;
+    flex: 1;
+}
+
+.nav__bottom p span {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.nav__bottom button {
+    border-radius: 30px;
+    width: 5vw;
+    height: 2vw;
+    border: none;
+    background-color: #643DF2;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all .1s ease-in-out;
+}
+
+.nav__bottom button:hover {
+    transform: scale(1.1);
+}
+
+/* MAIN CONTENT */
+
+.main-content {
+    background-color: #E4E4E7;
+    grid-area: main-content;
+    padding: 10px 2%;
+    display: grid;
+    grid-template-columns: 9fr 3fr;
+    box-shadow: 0 0 .5em black;
+
+}
+
+.main-content__projects {
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.projects-container {
+    padding-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    column-gap: 20px;
+    row-gap: 30px;
+}
+
+.main-content__projects>p,
+.announcements>p,
+.trending>p {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.project-content {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+    border-radius: 10px;
+    border-left: 10px solid yellow;
+
+}
+
+.project-title {
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.project-description {
+    padding-bottom: 20px;
+    text-align: justify;
+    padding-right: 30px;
+
+}
+
+
+.main-content__more-infos {
+    padding-top: 10px;
+    padding-left: 20px;
+}
+
+.main-content__more-infos>p {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.main-content__more-infos>p:not(:first-of-type) {
+    margin-top: 20px;
+}
+
+.announcements,
+.trending {
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin-top: 20px;
+}
+
+.announcement-title {
+    font-weight: bold;
+    font-size: 16px;
+    padding-top: 5px;
+}
+
+.announcement-description {
+    font-size: 12px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.annoucements__posts:not(:last-of-type) .announcement-description {
+    border-bottom: 1px solid black;
+}
+
+.trending__users {
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.trending__users img {
+    width: 50px; 
+    height: 50px;
+    border-radius: 50%;
+
+}
+
+.trending__users span{
+    padding-left: 10px;
+    font-size: 12px;
+}
